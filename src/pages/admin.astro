@@ -1,0 +1,8 @@
+---
+const user = Astro.locals.user;
+if (!user) {
+  return Astro.redirect("/signin");
+}
+---
+
+<h1>Admin</h1>

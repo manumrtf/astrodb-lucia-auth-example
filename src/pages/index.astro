@@ -1,16 +1,37 @@
 ---
-
+const user = Astro.locals.user;
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro</title>
+  </head>
+  <body class="min-h-screen grid place-items-center">
+    {
+      user ? (
+        <div class="flex flex-col gap-2">
+          <form method="POST" action="/api/signout">
+            <button class="underline">Sign out</button>
+          </form>
+          <a class="underline" href="/admin">
+            {" "}
+            Go to the admin page
+          </a>
+        </div>
+      ) : (
+        <div class="flex flex-col gap-2">
+          <a class="underline" href="/api/github">
+            Sign In With Github
+          </a>
+          <a class="underline" href="/signin">
+            Sign In With Username/Password
+          </a>
+        </div>
+      )
+    }
+  </body>
 </html>

@@ -25,12 +25,12 @@ import MainLayout from "@/layouts/MainLayout.astro";
           <h1
             class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white"
           >
-            Sign Up in to your account
+            Sign In in to your account
           </h1>
           <form
             class="space-y-4 md:space-y-6"
             method="POST"
-            action="/api/signup"
+            action="/api/signin"
           >
             <div>
               <label
@@ -68,8 +68,8 @@ import MainLayout from "@/layouts/MainLayout.astro";
               >Sign Up</button
             >
             <p class="text-sm font-light text-gray-500 dark:text-gray-400">
-              already have an account? <a
-                href="/signin"
+              Don't have an account? <a
+                href="/signup"
                 class="font-medium text-primary-600 hover:underline dark:text-primary-500"
                 >Sign In</a
               >
